@@ -62,7 +62,47 @@ class OperationsWidget extends StatelessWidget {
               ),
               onPressed: () {
                 cal.power();
-
+              },
+            ),
+            TextButton(
+              child: Text(
+                'sqrt',
+                style: TextStyle(fontSize: 20.0),
+              ),
+              onPressed: () {
+                cal.squareRoot();
+              },
+            ),
+          ]
+      ),
+      Row(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget> [
+            TextButton(
+              child: Text(
+                'sin',
+                style: TextStyle(fontSize: 20.0),
+              ),
+              onPressed: () {
+                cal.Sin();
+              },
+            ),
+            TextButton(
+              child: Text(
+                'cos',
+                style: TextStyle(fontSize: 20.0),
+              ),
+              onPressed: () {
+                cal.Cos();
+              },
+            ),
+            TextButton(
+              child: Text(
+                'sqrt',
+                style: TextStyle(fontSize: 20.0),
+              ),
+              onPressed: () {
+                cal.percentage();
               },
             ),
           ]

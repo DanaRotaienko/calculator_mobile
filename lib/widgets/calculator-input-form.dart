@@ -96,4 +96,3 @@ class ResultWidget extends StatelessWidget {
     );
   }
 }
-

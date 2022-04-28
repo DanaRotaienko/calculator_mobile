@@ -35,4 +35,20 @@ class Calculator {
     result = pow(x, y).toDouble();
   }
 
+  void percentage() {
+
+  }
+
+  void squareRoot() {
+    result = sqrt(x);
+  }
+
+  void Sin() {
+    result = sin(x);
+  }
+
+  void Cos() {
+    result = cos(x);
+  }
+
 }
