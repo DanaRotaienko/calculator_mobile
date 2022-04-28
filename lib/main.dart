@@ -1,3 +1,4 @@
+import 'package:calculator_mobile/screens/KilometersToMilesScreen.dart';
 import 'package:calculator_mobile/screens/calculator-screen.dart';
 import 'package:flutter/material.dart';
 
@@ -13,10 +14,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      initialRoute: '/',
+      routes: {
+        '/': (context) => CalculatorScreen(),
+        '/kilometers-to-miles' : (context) => KilometersToMilesScreen(),
+      },
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: CalculatorScreen(),
     );
   }
 }

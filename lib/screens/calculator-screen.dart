@@ -9,6 +9,15 @@ class CalculatorScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: CalculatorInputForm(),
+      floatingActionButton: FloatingActionButton(
+          onPressed: () async {
+            await Navigator.pushNamed(context, '/kilometers-to-miles');
+          },
+          child: Text(
+            'km/mi',
+            style: TextStyle(fontSize: 14.0),
+          )
+      ),
     );
   }
 

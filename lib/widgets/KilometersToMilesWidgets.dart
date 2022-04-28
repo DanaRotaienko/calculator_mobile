@@ -1,18 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 import '../models/calculator.dart';
-import 'operations.dart';
 
-class CalculatorInputForm extends StatefulWidget {
-  const CalculatorInputForm({Key? key}) : super(key: key);
+class InputsWidget extends StatefulWidget {
+  const InputsWidget({Key? key}) : super(key: key);
 
   @override
-  State<CalculatorInputForm> createState() => _CalculatorInputFormState();
+  State<InputsWidget> createState() => _InputsWidgetState();
 }
 
-class _CalculatorInputFormState extends State<CalculatorInputForm> {
+class _InputsWidgetState extends State<InputsWidget> {
   Calculator cal = Calculator(0, 0, 0);
   TextEditingController xController = TextEditingController();
   TextEditingController yController = TextEditingController();
@@ -20,7 +18,6 @@ class _CalculatorInputFormState extends State<CalculatorInputForm> {
   @override
   void initState() {
     xController.text = cal.x.toString();
-    yController.text = cal.y.toString();
 
     super.initState();
   }
@@ -48,48 +45,33 @@ class _CalculatorInputFormState extends State<CalculatorInputForm> {
                   });
                 }
             ),
-            TextField(
-              controller: yController,
-              maxLines: 1,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                hintText: 'Enter the second number',
-              ),
-              keyboardType: TextInputType.number,
-              onChanged: (input) {
-                setState(() {
-                  if (yController.text != '') {
-                    cal.setY(int.parse(yController.text));
-                  }
-                });
-              },
-            ),
-            OperationsWidget(cal),
-            ResultTextWidget(cal),
-
+            OperationWidget(cal)
           ]
       ),
     );
   }
 }
 
-class ResultTextWidget extends StatefulWidget {
+class OperationWidget extends StatefulWidget {
   final Calculator cal;
-  const ResultTextWidget(this.cal, {Key? key}) : super(key: key);
+  const OperationWidget(this.cal, {Key? key}) : super(key: key);
 
   @override
-  State<ResultTextWidget> createState() => _ResultTextWidgetState(cal);
+  State<OperationWidget> createState() => _OperationWidgetState(cal);
 }
 
-class _ResultTextWidgetState extends State<ResultTextWidget> {
+class _OperationWidgetState extends State<OperationWidget> {
   String result = "Result: ";
   final Calculator cal;
+
+  _OperationWidgetState(this.cal);
+
   changeText () {
-    setState(() {
-      result = "Result: ${cal.result.toStringAsFixed(2)}";
-    });
+   setState(() {
+     cal.kmToMi();
+     result = "Result: ${cal.result.toStringAsFixed(2)}";
+   });
   }
-  _ResultTextWidgetState(this.cal);
 
   @override
   Widget build(BuildContext context) {
@@ -98,19 +80,18 @@ class _ResultTextWidgetState extends State<ResultTextWidget> {
         ElevatedButton(
             onPressed: changeText,
             child: Text(
-                'Calculate',
-                style: TextStyle(fontSize: 20.0),
+              'Calculate',
+              style: TextStyle(fontSize: 20.0),
             ),
             style: ElevatedButton.styleFrom(
-                primary: Colors.green,
+              primary: Colors.green,
             )
         ),
         Text(
-          result,
-          style: TextStyle(fontSize: 16.0),
+            result,
+            style: TextStyle(fontSize: 20.0),
         )
       ],
-
     );
   }
 }

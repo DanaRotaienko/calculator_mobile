@@ -18,7 +18,7 @@ class OperationsWidget extends StatelessWidget {
             TextButton(
               child: Text(
                 '+',
-                style: TextStyle(fontSize: 20.0),
+                style: TextStyle(fontSize: 14.0),
               ),
               onPressed: () {
                 cal.addition(percentageChosen);
@@ -27,7 +27,7 @@ class OperationsWidget extends StatelessWidget {
             TextButton(
               child: Text(
                 '-',
-                style: TextStyle(fontSize: 20.0),
+                style: TextStyle(fontSize: 14.0),
               ),
               onPressed: () {
                 cal.subtraction(percentageChosen);
@@ -36,7 +36,7 @@ class OperationsWidget extends StatelessWidget {
             TextButton(
               child: Text(
                 '*',
-                style: TextStyle(fontSize: 20.0),
+                style: TextStyle(fontSize: 14.0),
               ),
               onPressed: () {
                 cal.multiplication(percentageChosen);
@@ -50,7 +50,7 @@ class OperationsWidget extends StatelessWidget {
             TextButton(
               child: Text(
                 '/',
-                style: TextStyle(fontSize: 20.0),
+                style: TextStyle(fontSize: 14.0),
               ),
               onPressed: () {
                 cal.division(percentageChosen);
@@ -59,7 +59,7 @@ class OperationsWidget extends StatelessWidget {
             TextButton(
               child: Text(
                 '^',
-                style: TextStyle(fontSize: 20.0),
+                style: TextStyle(fontSize: 14.0),
               ),
               onPressed: () {
                 cal.power(percentageChosen);
@@ -68,7 +68,7 @@ class OperationsWidget extends StatelessWidget {
             TextButton(
               child: Text(
                 'sqrt',
-                style: TextStyle(fontSize: 20.0),
+                style: TextStyle(fontSize: 14.0),
               ),
               onPressed: () {
                 cal.squareRoot();
@@ -82,7 +82,7 @@ class OperationsWidget extends StatelessWidget {
             TextButton(
               child: Text(
                 'sin',
-                style: TextStyle(fontSize: 20.0),
+                style: TextStyle(fontSize: 14.0),
               ),
               onPressed: () {
                 cal.Sin();
@@ -91,7 +91,7 @@ class OperationsWidget extends StatelessWidget {
             TextButton(
               child: Text(
                 'cos',
-                style: TextStyle(fontSize: 20.0),
+                style: TextStyle(fontSize: 14.0),
               ),
               onPressed: () {
                 cal.Cos();
@@ -100,12 +100,12 @@ class OperationsWidget extends StatelessWidget {
             ElevatedButton(
               child: Text(
                 'percentage',
-                style: TextStyle(fontSize: 20.0),
+                style: TextStyle(fontSize: 14.0),
               ),
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.resolveWith<Color>(
                       (Set<MaterialState> states) {
-                    if (percentageChosen) return Colors.green;
+                    if (percentageChosen) return Colors.orange;
                     //states.contains(MaterialState.pressed)
                     return Colors.blueAccent;
                   },
