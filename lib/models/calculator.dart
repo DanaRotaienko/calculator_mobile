@@ -15,28 +15,44 @@ class Calculator {
     y = newY;
   }
 
-  void addition() {
-    result = (x + y).roundToDouble();
+  void addition(bool percentage) {
+    if (percentage) {
+      result = (x + y/100*x).roundToDouble();
+    } else {
+      result = (x + y).roundToDouble();
+    }
   }
 
-  void subtraction() {
-    result = (x - y).roundToDouble();
+  void subtraction(bool percentage) {
+    if (percentage) {
+      result = (x - y/100*x).roundToDouble();
+    } else {
+      result = (x - y).roundToDouble();
+    }
   }
 
-  void multiplication() {
-    result = (x * y).roundToDouble();
+  void multiplication(bool percentage) {
+    if (percentage) {
+      result = (x * y/100*x).roundToDouble();
+    } else {
+      result = (x * y).roundToDouble();
+    }
   }
 
-  void division() {
-    y == 0 ? result : result = x / y;
+  void division(bool percentage) {
+    if (percentage) {
+      y == 0 ? result : result = x / y/100*x;
+    } else {
+      y == 0 ? result : result = x / y/100*x;
+    }
   }
 
-  void power() {
-    result = pow(x, y).toDouble();
-  }
-
-  void percentage() {
-
+  void power(bool percentage) {
+    if (percentage) {
+      result = pow(x, y/100*x).toDouble();
+    } else {
+      result = pow(x, y).toDouble();
+    }
   }
 
   void squareRoot() {

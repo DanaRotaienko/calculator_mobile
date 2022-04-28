@@ -10,6 +10,7 @@ class OperationsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool percentageChosen = false;
     return Column(children: <Widget>[
       Row(
           mainAxisSize: MainAxisSize.min,
@@ -20,7 +21,7 @@ class OperationsWidget extends StatelessWidget {
                 style: TextStyle(fontSize: 20.0),
               ),
               onPressed: () {
-                cal.addition();
+                cal.addition(percentageChosen);
               },
             ),
             TextButton(
@@ -29,7 +30,7 @@ class OperationsWidget extends StatelessWidget {
                 style: TextStyle(fontSize: 20.0),
               ),
               onPressed: () {
-                cal.subtraction();
+                cal.subtraction(percentageChosen);
               },
             ),
             TextButton(
@@ -38,7 +39,7 @@ class OperationsWidget extends StatelessWidget {
                 style: TextStyle(fontSize: 20.0),
               ),
               onPressed: () {
-                cal.multiplication();
+                cal.multiplication(percentageChosen);
               },
             ),
           ]
@@ -52,7 +53,7 @@ class OperationsWidget extends StatelessWidget {
                 style: TextStyle(fontSize: 20.0),
               ),
               onPressed: () {
-                cal.division();
+                cal.division(percentageChosen);
               },
             ),
             TextButton(
@@ -61,7 +62,7 @@ class OperationsWidget extends StatelessWidget {
                 style: TextStyle(fontSize: 20.0),
               ),
               onPressed: () {
-                cal.power();
+                cal.power(percentageChosen);
               },
             ),
             TextButton(
@@ -96,13 +97,22 @@ class OperationsWidget extends StatelessWidget {
                 cal.Cos();
               },
             ),
-            TextButton(
+            ElevatedButton(
               child: Text(
-                'sqrt',
+                'percentage',
                 style: TextStyle(fontSize: 20.0),
               ),
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.resolveWith<Color>(
+                      (Set<MaterialState> states) {
+                    if (percentageChosen) return Colors.green;
+                    //states.contains(MaterialState.pressed)
+                    return Colors.blueAccent;
+                  },
+                ),
+              ),
               onPressed: () {
-                cal.percentage();
+                percentageChosen = percentageChosen ? false : true;
               },
             ),
           ]
