@@ -59,7 +59,7 @@ class Calculator {
     result = double.parse(sqrt(x).toStringAsFixed(2));
   }
 
-  void Sin() {
+  void Sin() {v
     result = double.parse(sin(x).toStringAsFixed(2));
   }
 
