@@ -35,7 +35,7 @@ class _CalculatorInputFormState extends State<CalculatorInputForm> {
             TextField(
                 controller: xController,
                 maxLines: 1,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   hintText: 'Enter the first number',
                 ),
@@ -51,7 +51,7 @@ class _CalculatorInputFormState extends State<CalculatorInputForm> {
             TextField(
               controller: yController,
               maxLines: 1,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 border: OutlineInputBorder(),
                 hintText: 'Enter the second number',
               ),
@@ -97,7 +97,7 @@ class _ResultTextWidgetState extends State<ResultTextWidget> {
       children: [
         ElevatedButton(
             onPressed: changeText,
-            child: Text(
+            child: const Text(
                 'Calculate',
                 style: TextStyle(fontSize: 20.0),
             ),

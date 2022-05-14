@@ -16,30 +16,33 @@ class OperationsWidget extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             TextButton(
-              child: Text(
+              child: const Text(
                 '+',
                 style: TextStyle(fontSize: 14.0),
               ),
               onPressed: () {
                 cal.addition(percentageChosen);
+                cal.addStringToSF();
               },
             ),
             TextButton(
-              child: Text(
+              child: const Text(
                 '-',
                 style: TextStyle(fontSize: 14.0),
               ),
               onPressed: () {
                 cal.subtraction(percentageChosen);
+                cal.addStringToSF();
               },
             ),
             TextButton(
-              child: Text(
+              child: const Text(
                 '*',
                 style: TextStyle(fontSize: 14.0),
               ),
               onPressed: () {
                 cal.multiplication(percentageChosen);
+                cal.addStringToSF();
               },
             ),
           ]
@@ -48,30 +51,33 @@ class OperationsWidget extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: <Widget> [
             TextButton(
-              child: Text(
+              child: const Text(
                 '/',
                 style: TextStyle(fontSize: 14.0),
               ),
               onPressed: () {
                 cal.division(percentageChosen);
+                cal.addStringToSF();
               },
             ),
             TextButton(
-              child: Text(
+              child: const Text(
                 '^',
                 style: TextStyle(fontSize: 14.0),
               ),
               onPressed: () {
                 cal.power(percentageChosen);
+                cal.addStringToSF();
               },
             ),
             TextButton(
-              child: Text(
+              child: const Text(
                 'sqrt',
                 style: TextStyle(fontSize: 14.0),
               ),
               onPressed: () {
                 cal.squareRoot();
+                cal.addStringToSF();
               },
             ),
           ]
@@ -80,25 +86,27 @@ class OperationsWidget extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: <Widget> [
             TextButton(
-              child: Text(
+              child: const Text(
                 'sin',
                 style: TextStyle(fontSize: 14.0),
               ),
               onPressed: () {
                 cal.Sin();
+                cal.addStringToSF();
               },
             ),
             TextButton(
-              child: Text(
+              child: const Text(
                 'cos',
                 style: TextStyle(fontSize: 14.0),
               ),
               onPressed: () {
                 cal.Cos();
+                cal.addStringToSF();
               },
             ),
             ElevatedButton(
-              child: Text(
+              child: const Text(
                 'percentage',
                 style: TextStyle(fontSize: 14.0),
               ),
