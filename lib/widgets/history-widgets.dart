@@ -23,7 +23,7 @@ class _HistoryWidgetState extends State<HistoryWidget> {
           }
           return ListView(
             children: snapshot.data!.map((expression) {
-              return Center(
+              return Card(
                 child: ListTile(
                   title: Text(expression.calculation),
                 ),
