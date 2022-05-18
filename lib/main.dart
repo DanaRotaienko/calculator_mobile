@@ -17,8 +17,8 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       initialRoute: '/',
       routes: {
-        '/': (context) => CalculatorScreen(),
-        '/kilometers-to-miles' : (context) => KilometersToMilesScreen(),
+        '/': (context) => const CalculatorScreen(),
+        '/kilometers-to-miles' : (context) => const KilometersToMilesScreen(),
       },
       theme: ThemeData(
         primarySwatch: Colors.blue,

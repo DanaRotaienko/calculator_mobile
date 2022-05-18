@@ -1,5 +1,4 @@
 import 'package:calculator_mobile/widgets/KilometersToMilesWidgets.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class KilometersToMilesScreen extends StatelessWidget {
@@ -9,9 +8,9 @@ class KilometersToMilesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: InputsWidget(),
+      body: const InputsWidget(),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.arrow_back_ios),
+        child: const Icon(Icons.arrow_back_ios),
         onPressed: () {
           Navigator.pop(context);
         },

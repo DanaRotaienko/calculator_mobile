@@ -107,7 +107,7 @@ class _ResultTextWidgetState extends State<ResultTextWidget> {
         ),
         Text(
           result,
-          style: TextStyle(fontSize: 16.0),
+          style: const TextStyle(fontSize: 16.0),
         )
       ],
 

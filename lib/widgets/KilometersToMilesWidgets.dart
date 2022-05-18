@@ -32,7 +32,7 @@ class _InputsWidgetState extends State<InputsWidget> {
             TextField(
                 controller: xController,
                 maxLines: 1,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   hintText: 'Enter the first number',
                 ),
@@ -69,6 +69,7 @@ class _OperationWidgetState extends State<OperationWidget> {
   changeText () {
    setState(() {
      cal.kmToMi();
+     cal.add();
      result = "Result: ${cal.result.toStringAsFixed(2)}";
    });
   }
@@ -79,7 +80,7 @@ class _OperationWidgetState extends State<OperationWidget> {
       children: [
         ElevatedButton(
             onPressed: changeText,
-            child: Text(
+            child: const Text(
               'Calculate',
               style: TextStyle(fontSize: 20.0),
             ),
@@ -89,7 +90,7 @@ class _OperationWidgetState extends State<OperationWidget> {
         ),
         Text(
             result,
-            style: TextStyle(fontSize: 20.0),
+            style: const TextStyle(fontSize: 20.0),
         )
       ],
     );

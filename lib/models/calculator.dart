@@ -88,6 +88,7 @@ class Calculator {
 
   void kmToMi() {
     result = double.parse((x/1.609).toStringAsFixed(2));
+    expression = "$x kilometers = $result miles";
   }
 
   Future<void> add() async {

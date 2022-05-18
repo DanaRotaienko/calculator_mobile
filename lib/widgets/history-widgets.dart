@@ -19,7 +19,7 @@ class _HistoryWidgetState extends State<HistoryWidget> {
         builder: (BuildContext context,
             AsyncSnapshot<List<Expression>> snapshot) {
           if (!snapshot.hasData) {
-            return Center(child: Text('Loading...'));
+            return const Center(child: Text('Loading...'));
           }
           return ListView(
             children: snapshot.data!.map((expression) {
