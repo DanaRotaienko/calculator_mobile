@@ -1,6 +1,7 @@
 import 'package:calculator_mobile/widgets/history-widgets.dart';
 import 'package:flutter/material.dart';
 
+import '../database/Database.dart';
 import '../widgets/calculator-input-form.dart';
 
 class CalculatorScreen extends StatefulWidget {
@@ -18,7 +19,9 @@ final _pageOptions = [
 ];
 
 
+
 class _CalculatorScreenState extends State<CalculatorScreen> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

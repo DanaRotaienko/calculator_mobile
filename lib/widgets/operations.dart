@@ -22,7 +22,7 @@ class OperationsWidget extends StatelessWidget {
               ),
               onPressed: () {
                 cal.addition(percentageChosen);
-                cal.addStringToSF();
+                cal.add();
               },
             ),
             TextButton(
@@ -32,7 +32,7 @@ class OperationsWidget extends StatelessWidget {
               ),
               onPressed: () {
                 cal.subtraction(percentageChosen);
-                cal.addStringToSF();
+                cal.add();
               },
             ),
             TextButton(
@@ -42,7 +42,7 @@ class OperationsWidget extends StatelessWidget {
               ),
               onPressed: () {
                 cal.multiplication(percentageChosen);
-                cal.addStringToSF();
+                cal.add();
               },
             ),
           ]
@@ -57,7 +57,7 @@ class OperationsWidget extends StatelessWidget {
               ),
               onPressed: () {
                 cal.division(percentageChosen);
-                cal.addStringToSF();
+                cal.add();
               },
             ),
             TextButton(
@@ -67,7 +67,7 @@ class OperationsWidget extends StatelessWidget {
               ),
               onPressed: () {
                 cal.power(percentageChosen);
-                cal.addStringToSF();
+                cal.add();
               },
             ),
             TextButton(
@@ -77,7 +77,7 @@ class OperationsWidget extends StatelessWidget {
               ),
               onPressed: () {
                 cal.squareRoot();
-                cal.addStringToSF();
+                cal.add();
               },
             ),
           ]
@@ -92,7 +92,7 @@ class OperationsWidget extends StatelessWidget {
               ),
               onPressed: () {
                 cal.Sin();
-                cal.addStringToSF();
+                cal.add();
               },
             ),
             TextButton(
@@ -102,7 +102,7 @@ class OperationsWidget extends StatelessWidget {
               ),
               onPressed: () {
                 cal.Cos();
-                cal.addStringToSF();
+                cal.add();
               },
             ),
             ElevatedButton(

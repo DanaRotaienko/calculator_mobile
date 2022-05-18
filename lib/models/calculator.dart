@@ -1,6 +1,9 @@
+import 'dart:core';
 import 'dart:math';
 
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:calculator_mobile/models/Expression.dart';
+
+import '../database/Database.dart';
 
 class Calculator {
   int x;
@@ -25,7 +28,6 @@ class Calculator {
     } else {
       result = double.parse((x + y).toStringAsFixed(2));
       expression = "$x + $y = $result";
-      print(expression);
     }
   }
 
@@ -54,7 +56,7 @@ class Calculator {
       y == 0 ? result : result = double.parse((x / y/100*x).toStringAsFixed(2));
       expression = "$x / $y% = $result";
     } else {
-      y == 0 ? result : result = double.parse((x / y/100*x).toStringAsFixed(2));
+      y == 0 ? result : result = double.parse((x / y).toStringAsFixed(2));
       expression = "$x / $y = $result";
     }
   }
@@ -64,7 +66,7 @@ class Calculator {
       result = double.parse(pow(x, y/100*x).toStringAsFixed(2));
       expression = "$x ^ $y% = $result";
     } else {
-      result = pow(x, y).toDouble().toStringAsFixed(2) as double;
+      result = double.parse(pow(x, y).toDouble().toStringAsFixed(2));
       expression = "$x ^ $y = $result";
     }
   }
@@ -88,9 +90,11 @@ class Calculator {
     result = double.parse((x/1.609).toStringAsFixed(2));
   }
 
-  void addStringToSF() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setString('stringValue', expression!);
+  Future<void> add() async {
+    await DatabaseHelper.instance.add(
+      Expression(calculation: expression!),
+    );
   }
+
 
 }

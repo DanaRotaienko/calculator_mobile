@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../database/Database.dart';
+import '../models/Expression.dart';
+
 class HistoryWidget extends StatefulWidget {
   const HistoryWidget({Key? key}) : super(key: key);
 
@@ -8,30 +11,25 @@ class HistoryWidget extends StatefulWidget {
 }
 
 class _HistoryWidgetState extends State<HistoryWidget> {
+
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Column(
-        children: [
-          Card(
-            child: ListTile(
-              title: Row(
-                  children: const [
-                    Text("4 + 2 = 6"),
-                  ]),
-            ),
-          ),
-          Card(
-            child: ListTile(
-              title: Row(
-                  children: const [
-                    Text("4 / 2 = 2"),
-                  ]),
-            ),
-          ),
-        ],
-      ),
-    );
+    return FutureBuilder<List<Expression>>(
+        future: DatabaseHelper.instance.getExpressions(),
+        builder: (BuildContext context,
+            AsyncSnapshot<List<Expression>> snapshot) {
+          if (!snapshot.hasData) {
+            return Center(child: Text('Loading...'));
+          }
+          return ListView(
+            children: snapshot.data!.map((expression) {
+              return Center(
+                child: ListTile(
+                  title: Text(expression.calculation),
+                ),
+              );
+            }).toList(),
+          );
+        });
   }
 }
