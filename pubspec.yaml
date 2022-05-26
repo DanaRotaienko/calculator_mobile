@@ -29,7 +29,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  shared_preferences: 2.0.15
   sqflite: ^2.0.2
   path_provider: 2.0.9
   path: ^1.8.0
